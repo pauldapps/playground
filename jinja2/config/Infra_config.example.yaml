@@ -1,0 +1,45 @@
+switches:
+  - hostname: NYC-SW01
+    interfaces: 8
+    stacked: false
+    ip address: 10.44.0.1
+    uplink ports:
+      - 1
+      - 2
+  - hostname: NYC-SW02
+    interfaces: 8
+    stacked: false
+    ip address: 10.44.0.2
+    uplink ports:
+      - 1
+      - 2
+
+UPS:
+  - hostname: NYC-UPS01
+    ip address: 10.44.0.5
+    prod_outlet_group: 1
+    mon_card: false
+  - hostname: NYC-UPS02
+    ip address: 10.44.0.6
+    prod_outlet_group: 1
+    mon_card: false
+
+PDU:
+  - hostname: NYC-PDU01
+    ip address: 10.44.0.8
+    outlets:
+      1: NYC-SW01-A
+      2: NYC-SW02-A
+      3: NYC-FW01-A
+  - hostname: NYC-PDU02
+    ip address: 10.44.0.7
+    outlets:
+      1: NYC-SW01-B
+      2: NYC-SW02-B
+      3: NYC-FW01-B
+  - hostname: NYC-PDU03
+    ip address: 10.44.0.8
+    outlets:
+      1: NYC-SW01-C
+      2: NYC-SW02-C
+      3: NYC-FW01-C

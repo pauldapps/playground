@@ -1,0 +1,59 @@
+hostname NYC-SW02
+ip address 
+
+rest-interface
+rest-interface timeout 300
+dhcp-snooping
+interface vlan 1 ip address 10.44.0.2
+
+
+
+interface 1 loop-protect
+interface 2 loop-protect
+interface 3 loop-protect
+interface 4 loop-protect
+interface 5 loop-protect
+interface 6 loop-protect
+interface 7 loop-protect
+
+
+ spanning-treeinterface 1
+ spanning-treeinterface 2
+ spanning-treeinterface 3
+ spanning-treeinterface 4
+ spanning-treeinterface 5
+ spanning-treeinterface 6
+ spanning-treeinterface 7
+
+
+ aaa port-access mac-based 1
+ aaa port-access mac-based 2
+ aaa port-access mac-based 3
+ aaa port-access mac-based 4
+ aaa port-access mac-based 5
+ aaa port-access mac-based 6
+ aaa port-access mac-based 7
+
+ aaa port-access mac-based 1 unauth-vid 202
+ aaa port-access mac-based 2 unauth-vid 202
+ aaa port-access mac-based 3 unauth-vid 202
+ aaa port-access mac-based 4 unauth-vid 202
+ aaa port-access mac-based 5 unauth-vid 202
+ aaa port-access mac-based 6 unauth-vid 202
+ aaa port-access mac-based 7 unauth-vid 202
+
+ aaa port-access mac-based 1 mac-pin
+ aaa port-access mac-based 2 mac-pin
+ aaa port-access mac-based 3 mac-pin
+ aaa port-access mac-based 4 mac-pin
+ aaa port-access mac-based 5 mac-pin
+ aaa port-access mac-based 6 mac-pin
+ aaa port-access mac-based 7 mac-pin
+
+ aaa port-access authenticator 1
+ aaa port-access authenticator 2
+ aaa port-access authenticator 3
+ aaa port-access authenticator 4
+ aaa port-access authenticator 5
+ aaa port-access authenticator 6
+ aaa port-access authenticator 7

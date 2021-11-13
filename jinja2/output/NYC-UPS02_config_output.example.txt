@@ -1,0 +1,3 @@
+[UPS Config]
+ip_address=10.44.0.6
+hostname=NYC-UPS02

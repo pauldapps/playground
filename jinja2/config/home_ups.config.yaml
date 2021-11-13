@@ -1,0 +1,10 @@
+UPS:
+  - hostname: Home-UPS01
+    ip address: 192.168.1.253
+    gateway: 192.168.1.1
+    netmask: 255.255.255.0
+    dns:
+      - 192.168.1.250
+      - 1.1.1.1
+    prod_outlet_group: 1
+    mon_card: false

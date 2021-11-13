@@ -1,0 +1,13 @@
+---
+- name: Provision Raspberry Pi
+  ansible_user: ubuntu
+  ansible_password: 
+  hosts:
+    - rasp-pi
+  remote_user: ubuntu
+
+  tasks:
+    - name: Update OS
+      apt:
+        update_cache: yes
+        upgrade: yes

@@ -1,0 +1,38 @@
+; Schneider Electric
+; Network Management Card AOS v6.4.6
+; Smart-UPS & Matrix-UPS APP v6.4.6
+; (c) Copyright 2003 - 2016 All Rights Reserved
+; Configuration file, generated on 10/09/2021 at 11:42:35 by Administrator apc
+
+[NetworkTCP/IP]
+SystemIP={{data['ip address']}}
+SubnetMask={{data['net mask']}}
+DefaultGateway={{data['gateway']}}
+HostName={{data['hostname']}}
+
+[NetworkDNS]
+PrimaryDNSServerIP={{data['dns'][0]}}
+SecondaryDNSServerIP={{data['dns'][1]}}
+
+[NetworkFTPServer]
+Port=21
+Access=disabled
+
+[NetworkTelnet]
+Port=23
+Telnet=disabled
+SSHPort=22
+SSH=enabled
+
+[NetworkWeb]
+Port=80
+HTTP=disabled
+HTTPSPort=443
+HTTPS=enabled
+MinimumProtocol=TLS1.2
+
+[SystemID]
+Name={{data['hostname']}}
+Contact="pauldapps"
+Location=3875 Kensington Dr
+Message="motd"

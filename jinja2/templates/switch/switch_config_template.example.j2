@@ -1,0 +1,25 @@
+hostname {{data['hostname']}}
+ip address {{data['ip']}}
+{# Enable API #}
+rest-interface
+rest-interface timeout 300
+dhcp-snooping
+interface vlan 1 ip address {{data['ip address']}}
+{% for n in data['uplinkports'] %}interface {{n}} dhcp-snooping trust
+{% endfor %}
+{# For number of interfaces, generate loop-protect config #}
+{# todo: range needs a plus one to process port numbers correctly #}
+{% for n in range(1, data['interfaces']) %}interface {{n}} loop-protect
+{% endfor %}
+{# For number of interfaces, generate spanning-tree config #}
+{% for n in range(1, data['interfaces']) %} spanning-treeinterface {{n}}
+{% endfor %}
+{# For number of interfaces, generate 802.1x config #}
+{% for n in range(1, data['interfaces']) %} aaa port-access mac-based {{n}}
+{% endfor %}
+{% for n in range(1, data['interfaces']) %} aaa port-access mac-based {{n}} unauth-vid 202
+{% endfor %}
+{% for n in range(1, data['interfaces']) %} aaa port-access mac-based {{n}} mac-pin
+{% endfor %}
+{% for n in range(1, data['interfaces']) %} aaa port-access authenticator {{n}}
+{% endfor %}

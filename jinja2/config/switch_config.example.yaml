@@ -1,0 +1,15 @@
+switches:
+  - hostname: NYC-SW01
+    interfaces: 8
+    stacked: false
+    ip address: 10.44.0.1
+    uplink ports:
+      - 1
+      - 2
+  - hostname: NYC-SW02
+    interfaces: 8
+    stacked: false
+    ip address: 10.44.0.2
+    uplink ports:
+      - 1
+      - 2

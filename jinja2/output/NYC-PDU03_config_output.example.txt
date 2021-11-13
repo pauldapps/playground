@@ -1,0 +1,4 @@
+[PDU Config]
+ip_address=10.44.0.8
+hostname=NYC-PDU03
+
