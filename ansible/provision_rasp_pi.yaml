@@ -1,6 +1,6 @@
 ---
 - name: Provision Raspberry Pi
-  ansible_user: ubuntu
+  ansible_user: ubuntuu
   ansible_password: 
   hosts:
     - rasp-pi
